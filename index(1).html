@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&M Fletes | Tu carga segura, nuestro compromiso</title>
+<meta name="description" content="M&M Fletes: fletes, mudanzas y transporte de carga en todo Chile. Cotiza tu traslado de forma rápida y segura.">
+<style>
+:root{
+  --yellow:#ffd400; --yellow2:#ffbd00; --ink:#07101b; --ink2:#101c29;
+  --white:#fff; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8;
+  --shadow:0 18px 45px rgba(0,0,0,.12); --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;color:#111827;background:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(5,13,22,.96);backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:22px;letter-spacing:-1px}
+.logo-mark{width:48px;height:34px;border:3px solid var(--yellow);border-radius:9px 15px 9px 6px;position:relative}
+.logo-mark:before{content:"";position:absolute;width:22px;height:10px;border:3px solid var(--yellow);left:11px;top:-8px;border-bottom:0;border-radius:10px 10px 0 0}
+.logo-mark:after{content:"";position:absolute;width:8px;height:8px;background:var(--yellow);border-radius:50%;left:5px;bottom:-6px;box-shadow:26px 0 0 var(--yellow)}
+.logo span{color:var(--yellow)}
+.navlinks{display:flex;gap:28px;font-size:14px;color:#d9dee5}
+.navlinks a:hover{color:var(--yellow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:13px 21px;font-weight:800;cursor:pointer;transition:.2s}
+.btn-yellow{background:var(--yellow);color:#111}
+.btn-yellow:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(255,212,0,.25)}
+.btn-outline{border:1px solid rgba(255,255,255,.55);color:#fff;background:transparent}
+.btn-outline:hover{border-color:var(--yellow);color:var(--yellow)}
+.menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+
+.hero{position:relative;min-height:650px;display:flex;align-items:center;color:#fff;overflow:hidden;background:
+linear-gradient(90deg,rgba(3,10,17,.94) 0%,rgba(3,10,17,.78) 42%,rgba(3,10,17,.2) 80%),
+url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:130px;background:linear-gradient(transparent,var(--ink))}
+.hero-content{position:relative;z-index:2;width:58%;padding:80px 0}
+.kicker{font-size:13px;letter-spacing:2px;font-weight:800;color:var(--yellow);margin-bottom:12px}
+.hero h1{font-size:clamp(46px,6vw,82px);line-height:.94;letter-spacing:-3px;font-weight:950;text-transform:uppercase}
+.hero h1 span{color:var(--yellow)}
+.hero p{font-size:18px;max-width:590px;margin:24px 0 28px;color:#e7ebef}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{position:absolute;z-index:4;right:5%;top:80px;width:360px;background:#fff;color:#111827;border-radius:22px;padding:22px;box-shadow:0 25px 60px rgba(0,0,0,.3)}
+.hero-card h2{font-size:25px}
+.hero-card p{font-size:13px;color:#667085;margin:4px 0 15px}
+.step-title{font-weight:900;font-size:13px;margin:13px 0 8px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:11px;font-weight:800;color:#4b5563}
+.field input,.field select,.field textarea{width:100%;padding:11px 10px;border:1px solid #d8dde5;border-radius:9px;background:#fff;font-size:12px;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#111827;box-shadow:0 0 0 3px rgba(255,212,0,.22)}
+.full{grid-column:1/-1}
+.quote-btn{width:100%;margin-top:13px}
+.features{background:var(--ink);color:#fff;position:relative;z-index:5}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:24px 0}
+.feature{display:flex;align-items:center;gap:12px}
+.icon{width:42px;height:42px;border:2px solid var(--yellow);border-radius:50%;display:grid;place-items:center;color:var(--yellow);font-weight:900;font-size:19px;flex:0 0 auto}
+.feature strong{display:block;font-size:14px}.feature small{color:#b9c1ca;font-size:12px}
+
+.section{padding:85px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:35px}
+.eyebrow{font-size:11px;letter-spacing:2px;font-weight:900;color:#737b86}
+.section h2{font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-1.5px;margin-top:7px}
+.section-head p{color:#6b7280;max-width:520px}
+.services{background:#fff}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 8px 25px rgba(15,23,42,.05);transition:.2s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card-img{height:175px;background-size:cover;background-position:center}
+.card-body{padding:18px}
+.card-icon{width:40px;height:40px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;font-size:20px;margin-top:-38px;position:relative;border:4px solid #fff}
+.card h3{font-size:18px;margin:13px 0 5px}.card p{font-size:13px;color:#6b7280}
+.center{text-align:center;margin-top:28px}
+
+.process{background:#07131f;color:#fff;position:relative;overflow:hidden}
+.process:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,19,31,.96),rgba(7,19,31,.72)),url('https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe9d?auto=format&fit=crop&w=1800&q=80') center/cover}
+.process .container{position:relative;z-index:1}
+.process p{color:#c8d0d9}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:45px}
+.process-item{text-align:center;position:relative}
+.process-item:not(:last-child):after{content:"→";position:absolute;right:-25px;top:14px;color:var(--yellow);font-size:28px}
+.process-number{width:58px;height:58px;background:var(--yellow);color:#111;border-radius:50%;display:grid;place-items:center;font-weight:950;font-size:20px;margin:0 auto 16px}
+.process-item h3{margin-bottom:7px}.process-item p{font-size:13px}
+
+.about{background:#f7f8fa}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:55px;align-items:center}
+.about-img{height:430px;border-radius:22px;background:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=1000&q=85') center/cover;box-shadow:var(--shadow)}
+.about-copy h2{font-size:44px;line-height:1.05;margin:8px 0 18px}.about-copy h2 span{color:#c59d00}
+.about-copy p{color:#68707b;max-width:620px}
+.about-points{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+.point strong{display:block;font-size:14px}.point small{color:#6b7280;font-size:12px}
+
+.testimonials{background:#fff}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quote{border:1px solid var(--line);border-radius:16px;padding:23px;background:#fff}
+.stars{color:#f2b900;letter-spacing:2px}.quote p{color:#59616c;font-size:14px;margin:14px 0}.person{font-weight:900;font-size:13px}
+
+.opinion-box{margin-top:42px;background:#f7f8fa;border:1px solid #e5e7eb;border-radius:20px;padding:30px}
+.opinion-box h3{font-size:28px;margin:7px 0}
+.opinion-box>p{color:#68707b;margin-bottom:20px}
+.opinion-form{background:#fff;border-radius:16px;padding:22px;border:1px solid #e5e7eb}
+.opinion-form textarea{min-height:105px;resize:vertical}
+.opinion-form .btn{margin-top:14px}
+.contact{background:linear-gradient(90deg,rgba(4,12,20,.95),rgba(4,12,20,.82)),url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1800&q=85') center/cover;color:#fff}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+.contact h2{font-size:45px;line-height:1.05;margin:8px 0 14px}.contact p{color:#c9d0d8}
+.contact-info{margin-top:28px;display:grid;gap:15px}.contact-info div{display:flex;gap:12px;align-items:center}.contact-info .icon{width:38px;height:38px}
+.contact-form{background:#fff;padding:25px;border-radius:20px;color:#111;box-shadow:var(--shadow)}
+.contact-form .field{margin-bottom:12px}.contact-form textarea{min-height:110px;resize:vertical}
+
+footer{background:#050c14;color:#aeb7c2;padding:28px 0}
+.footer-row{display:flex;justify-content:space-between;gap:25px;align-items:center}.footer-links{display:flex;gap:20px;font-size:13px}.copyright{font-size:12px;margin-top:20px;color:#687380}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;font-size:27px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+
+.notice{position:fixed;left:20px;bottom:20px;background:#111827;color:#fff;padding:13px 17px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:70;font-size:13px}
+.notice.show{display:block}
+
+@media(max-width:980px){
+  .navlinks{display:none}.menu{display:block}
+  .hero{min-height:780px;align-items:flex-start}.hero-content{width:100%;padding:65px 0 300px}.hero-card{left:4%;right:4%;width:auto;top:auto;bottom:30px}
+  .feature-grid,.cards{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}.process-item:nth-child(2):after{display:none}
+  .about-grid,.contact-grid{grid-template-columns:1fr}.about-img{height:320px}
+}
+@media(max-width:620px){
+  .nav{height:66px}.logo{font-size:18px}.logo-mark{width:40px;height:29px}
+  .hero h1{font-size:48px;letter-spacing:-2px}.hero p{font-size:15px}.hero{min-height:850px}
+  .hero-card{padding:17px}.form-grid{grid-template-columns:1fr}
+  .feature-grid,.cards,.process-grid,.testimonial-grid,.about-points{grid-template-columns:1fr}
+  .process-item:not(:last-child):after{display:none}
+  .section{padding:60px 0}.section-head{display:block}.section-head p{margin-top:12px}
+  .about-copy h2,.contact h2{font-size:35px}.footer-row{display:block}.footer-links{margin-top:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="#inicio"><span class="logo-mark"></span><b>M&M</b> <span>FLETES</span></a>
+    <nav class="navlinks">
+      <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#como-funciona">Cómo funciona</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-yellow" href="#cotizador">Cotizar mi flete</a>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <div class="kicker">M&M FLETES · TRANSPORTE Y LOGÍSTICA</div>
+      <h1>TU CARGA <span>SEGURA</span><br>NUESTRO <span>COMPROMISO</span></h1>
+      <p>Trasladamos lo que necesitas, cuando lo necesitas. Fletes seguros, rápidos y a todo Chile.</p>
+      <div class="actions">
+        <a class="btn btn-yellow" href="#cotizador">🚚 Cotizar mi flete</a>
+        <a class="btn btn-outline" href="#servicios">Ver nuestros servicios →</a>
+      </div>
+    </div>
+  </div>
+
+  <aside class="hero-card" id="cotizador">
+    <h2>Rápido, fácil y seguro</h2>
+    <p>Completa los datos y recibe una cotización estimada. Luego puedes reservar por WhatsApp.</p>
+    <form id="quoteForm">
+      <div class="step-title">1 · Datos del traslado</div>
+      <div class="form-grid">
+        <div class="field"><label>Dirección de retiro</label><input id="origen" required placeholder="Ej: Santiago"></div>
+        <div class="field"><label>Dirección de destino</label><input id="destino" required placeholder="Ej: Valparaíso"></div>
+        <div class="field"><label>Fecha del servicio</label><input id="fecha" type="date" required></div>
+        <div class="field"><label>Hora</label><input id="hora" type="time" required></div>
+      </div>
+      <div class="step-title">2 · Tipo de carga y servicio</div>
+      <div class="form-grid">
+        <div class="field"><label>Tipo de carga</label><select id="carga"><option>Mudanza</option><option>Mercadería</option><option>Muebles</option><option>Carga pesada</option><option>Otro</option></select></div>
+        <div class="field"><label>Camión</label><select id="camion"><option>Camión pequeño</option><option>Camión mediano</option><option>Camión grande</option></select></div>
+      </div>
+      <div class="step-title">3 · Tus datos</div>
+      <div class="form-grid">
+        <div class="field"><label>Nombre completo</label><input id="nombre" required placeholder="Ej: Juan Pérez"></div>
+        <div class="field"><label>Teléfono / WhatsApp</label><input id="telefono" required placeholder="+56 9 6717 0333"></div>
+        <div class="field full"><label>Correo electrónico</label><input id="correo" type="email" placeholder="correo@ejemplo.cl"></div>
+      </div>
+      <button class="btn btn-yellow quote-btn" type="submit">📋 Calcular mi cotización</button>
+    </form>
+  </aside>
+</section>
+
+<section class="features">
+ <div class="container feature-grid">
+  <div class="feature"><div class="icon">✓</div><div><strong>Seguridad</strong><small>en tu carga</small></div></div>
+  <div class="feature"><div class="icon">◷</div><div><strong>Puntualidad</strong><small>en cada entrega</small></div></div>
+  <div class="feature"><div class="icon">★</div><div><strong>Personal</strong><small>con experiencia</small></div></div>
+  <div class="feature"><div class="icon">⌖</div><div><strong>Cobertura</strong><small>todo Chile</small></div></div>
+ </div>
+</section>
+
+<section class="section services" id="servicios">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">TODO TIPO DE TRASLADOS</div><h2>Nuestros Servicios</h2></div><p>Nos adaptamos a tus necesidades, ya sea un pequeño envío o un gran traslado.</p></div>
+  <div class="cards">
+   <article class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80')"></div><div class="card-body"><div class="card-icon">🚚</div><h3>Fletes generales</h3><p>Muebles, electrodomésticos, mercaderías y más.</p></div></article>
+   <article class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=800&q=80')"></div><div class="card-body"><div class="card-icon">⌂</div><h3>Mudanzas</h3><p>Casas, departamentos y oficinas.</p></div></article>
+   <article class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&q=80')"></div><div class="card-body"><div class="card-icon">▣</div><h3>Transporte de carga</h3><p>Pequeñas y grandes cargas con cuidado.</p></div></article>
+   <article class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80')"></div><div class="card-body"><div class="card-icon">⌖</div><h3>Viajes especiales</h3><p>Para empresas y clientes particulares.</p></div></article>
+  </div>
+  <div class="center"><a class="btn btn-yellow" href="#cotizador">Cotizar un servicio →</a></div>
+ </div>
+</section>
+
+<section class="section process" id="como-funciona">
+ <div class="container">
+  <div class="eyebrow">SIMPLE Y TRANSPARENTE</div><h2>¿Cómo funciona?</h2><p>En solo 4 pasos, tendrás tu flete listo.</p>
+  <div class="process-grid">
+   <div class="process-item"><div class="process-number">1</div><h3>Cotiza</h3><p>Completa el formulario con los detalles de tu traslado.</p></div>
+   <div class="process-item"><div class="process-number">2</div><h3>Confirma</h3><p>Recibe un precio y confirma tu reserva por WhatsApp.</p></div>
+   <div class="process-item"><div class="process-number">3</div><h3>Seguimiento</h3><p>Te mantenemos informado durante todo el proceso.</p></div>
+   <div class="process-item"><div class="process-number">4</div><h3>Entrega</h3><p>Tu carga llega segura y en el tiempo acordado.</p></div>
+  </div>
+  <div class="center"><a class="btn btn-yellow" href="#cotizador">Cotizar ahora →</a></div>
+ </div>
+</section>
+
+<section class="section about" id="nosotros">
+ <div class="container about-grid">
+  <div class="about-img"></div>
+  <div class="about-copy">
+   <div class="eyebrow">¿POR QUÉ ELEGIRNOS?</div>
+   <h2>Comprometidos con <span>tu tranquilidad</span></h2>
+   <p>En M&M Fletes nos enfocamos en entregar un servicio profesional, seguro y puntual. Sabemos lo importante que es tu carga, por eso trabajamos con responsabilidad y dedicación en cada traslado.</p>
+   <div class="about-points">
+    <div class="point"><strong>🛠 Experiencia</strong><small>en el rubro</small></div>
+    <div class="point"><strong>▣ Precios justos</strong><small>y transparentes</small></div>
+    <div class="point"><strong>♧ Atención</strong><small>personalizada</small></div>
+   </div>
+   <a class="btn btn-yellow" href="#contacto">Conoce más sobre nosotros →</a>
+  </div>
+ </div>
+</section>
+
+<section class="section testimonials" id="opiniones">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">LO QUE DICEN NUESTROS CLIENTES</div><h2>Testimonios</h2></div>
+   <p>La opinión de nuestros clientes nos ayuda a mejorar y a seguir entregando un buen servicio.</p>
+  </div>
+  <div class="testimonial-grid" id="testimonialList">
+   <article class="quote"><div class="stars">★★★★★</div><p>“Excelente servicio, muy puntuales y responsables. Todo llegó en perfecto estado.”</p><div class="person">Matías R.</div></article>
+   <article class="quote"><div class="stars">★★★★★</div><p>“Cotización rápida y buena atención. Todo llegó en perfecto estado. Gracias M&M Fletes.”</p><div class="person">Camila T.</div></article>
+   <article class="quote"><div class="stars">★★★★★</div><p>“Muy profesionales, la carga llegó en el tiempo acordado. Sin duda los volveré a contratar.”</p><div class="person">Felipe S.</div></article>
+  </div>
+  <div class="opinion-box">
+   <div class="eyebrow">COMPARTE TU EXPERIENCIA</div>
+   <h3>¿Ya utilizaste M&M Fletes?</h3>
+   <p>Déjanos tu opinión y cuéntales a otros clientes cómo fue tu experiencia.</p>
+   <form id="opinionForm" class="opinion-form">
+    <div class="form-grid">
+     <div class="field"><label>Nombre</label><input id="opinionName" required maxlength="40" placeholder="Tu nombre"></div>
+     <div class="field"><label>Calificación</label><select id="opinionRating">
+      <option value="5">★★★★★ · Excelente</option><option value="4">★★★★☆ · Muy bueno</option>
+      <option value="3">★★★☆☆ · Bueno</option><option value="2">★★☆☆☆ · Regular</option><option value="1">★☆☆☆☆ · Debe mejorar</option>
+     </select></div>
+     <div class="field full"><label>Tu opinión</label><textarea id="opinionText" required maxlength="300" placeholder="Cuéntanos cómo fue tu experiencia..."></textarea></div>
+    </div>
+    <button class="btn btn-yellow" type="submit">⭐ Publicar mi opinión</button>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="section contact" id="contacto">
+ <div class="container contact-grid">
+  <div>
+   <div class="eyebrow">CONTACTO</div><h2>¿Tienes alguna consulta?</h2><p>Escríbenos y te responderemos lo antes posible.</p>
+   <div class="contact-info">
+    <div><div class="icon">◉</div><span><strong>WhatsApp</strong><br>+56 9 6717 0333</span></div>
+    <div><div class="icon">@</div><span><strong>Correo</strong><br>mmserviciofletes@gmail.com</span></div>
+   </div>
+  </div>
+  <form class="contact-form" id="contactForm">
+   <div class="field"><label>Nombre</label><input required placeholder="Tu nombre completo"></div>
+   <div class="field"><label>Teléfono / WhatsApp</label><input required placeholder="+56 9 6717 0333"></div>
+   <div class="field"><label>Mensaje</label><textarea required placeholder="Escribe tu mensaje..."></textarea></div>
+   <button class="btn btn-yellow" style="width:100%" type="submit">✈ Enviar mensaje</button>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-row">
+   <a class="logo" href="#inicio"><span class="logo-mark"></span><b>M&M</b> <span>FLETES</span></a>
+   <div class="footer-links"><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#como-funciona">Cómo funciona</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div>
+  </div>
+  <div class="copyright">© 2026 M&M Fletes. Todos los derechos reservados.</div>
+ </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/56967170333?text=Hola%20M%26M%20Fletes%2C%20quiero%20cotizar%20un%20traslado." target="_blank" aria-label="WhatsApp">◔</a>
+<div class="notice" id="notice"></div>
+
+<script>
+function toggleMenu(){
+  const nav=document.querySelector('.navlinks');
+  nav.style.display=nav.style.display==='flex'?'none':'flex';
+  nav.style.position='absolute';nav.style.top='66px';nav.style.left='0';nav.style.right='0';
+  nav.style.background='#07101b';nav.style.padding='18px';nav.style.flexDirection='column';
+}
+function showNotice(msg){
+  const n=document.getElementById('notice');n.textContent=msg;n.classList.add('show');
+  setTimeout(()=>n.classList.remove('show'),5000);
+}
+document.getElementById('quoteForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const nombre=document.getElementById('nombre').value;
+  const origen=document.getElementById('origen').value;
+  const destino=document.getElementById('destino').value;
+  const camion=document.getElementById('camion').value;
+  const base=camion.includes('pequeño')?35000:camion.includes('mediano')?55000:75000;
+  showNotice(`Solicitud recibida, ${nombre}. Estimación inicial: $${base.toLocaleString('es-CL')}. Luego puedes confirmar por WhatsApp.`);
+  const text=`Hola M&M Fletes, soy ${nombre}. Quiero cotizar un traslado desde ${origen} hasta ${destino}. Camión: ${camion}.`;
+  setTimeout(()=>window.open('https://wa.me/56967170333?text='+encodeURIComponent(text),'_blank'),700);
+});
+function escapeOpinion(v){return v.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+function addOpinionCard(item){
+ const card=document.createElement('article'); card.className='quote';
+ const stars='★'.repeat(item.rating)+'☆'.repeat(5-item.rating);
+ card.innerHTML='<div class="stars">'+stars+'</div><p>“'+escapeOpinion(item.text)+'”</p><div class="person">'+escapeOpinion(item.name)+'</div>';
+ document.getElementById('testimonialList').appendChild(card);
+}
+document.getElementById('opinionForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const item={name:document.getElementById('opinionName').value.trim(),rating:Number(document.getElementById('opinionRating').value),text:document.getElementById('opinionText').value.trim()};
+ const saved=JSON.parse(localStorage.getItem('mmfletesOpinions')||'[]'); saved.push(item); localStorage.setItem('mmfletesOpinions',JSON.stringify(saved));
+ addOpinionCard(item); e.target.reset(); showNotice('¡Gracias! Tu opinión fue publicada.');
+});
+JSON.parse(localStorage.getItem('mmfletesOpinions')||'[]').forEach(addOpinionCard);
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault(); showNotice('Mensaje preparado. Puedes contactarnos por WhatsApp al +56 9 6717 0333 o por correo a mmserviciofletes@gmail.com.');
+});
+</script>
+</body>
+</html>
